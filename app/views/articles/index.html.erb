@@ -1,0 +1,8 @@
+<h1>Hello from Article Controller</h1>
+<% @articles.each do |article| %>
+  <div>
+    <h2><%= link_to article.title, article %></h2>
+    <p><%= article.text %></p>
+  </div>
+<% end %>
+<h3><%= link_to "New article post", new_article_path %></h3>

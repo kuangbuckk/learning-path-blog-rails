@@ -10,7 +10,8 @@
         <%elsif blog_post.scheduled? %>
             <div class="bg-blue-100 p-2 rounded text-gray-900"> Scheduled</div>
         <% end %>
-        <%= blog_post.body %>
+        <%= blog_post.content %>
     </div>
 <% end %>
+<%== pagy_nav(@pagy, class: "mt-16") %>
 <h2>TEST PUSHING CODE CHANGES TO PRODUCTION</h2>

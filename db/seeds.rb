@@ -13,3 +13,8 @@ user.update!( #return exceptions not false
     password: "password",
     password_confirmation: "password"
 )
+
+100.times do |i|
+  blog_post =  BlogPost.where(title: "Blog post #{i}").first_or_initialize # content: "Hello world #{i}"
+  blog_post.update(content: "Hello world #{i}", published_at: Time.current)
+end

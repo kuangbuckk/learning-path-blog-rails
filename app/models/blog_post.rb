@@ -3,7 +3,7 @@ class BlogPost < ApplicationRecord
     validates :body, presence: true
 
     # Scopes: for reusable queries
-    scope :sorted, -> { order(published_at: :desc, updated_at: :desc) }
+    scope :sorted, -> { order(arel_table[:published_at].desc.nulls_last).order(updated_at: :desc) }
     scope :draft, -> {where(published_at: nil)} #BlogPosts.draft
     scope :published, -> {where("published_at <= ? ", Time.current)} #less or equal
     scope :scheduled, -> {where("published_at > ? ", Time.current)} #less or equal

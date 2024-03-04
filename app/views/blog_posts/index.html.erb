@@ -13,6 +13,8 @@
         <%= blog_post.content %>
     </div>
 <% end %>
-<%= console %>
-<%== pagy_nav(@pagy, class: "mt-16") %>
+
+<% if @pagy.count > @pagy.items %>
+    <%== pagy_nav(@pagy, class: "mt-16") %>
+<% end %>
 <h2>TEST PUSHING CODE CHANGES TO PRODUCTION</h2>
